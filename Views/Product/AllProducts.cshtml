@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllProducts</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+</head>
+<body>
+    <<h1>Popular Microsoft Products That Have Impacted The Industry</h1>
+    @await Html.PartialAsync("_FirstPartial")
+    <p>Choose One </p>
+    @foreach (string currentProduct in ViewBag.ProductList)
+    {
+        <div>
+            @*the link name is currentName,details = action link, "new" is a parameter*@
+            @Html.ActionLink(currentProduct, "Details", new { prodname = currentProduct });
+        </div>
+    }
+</body>
+</html>

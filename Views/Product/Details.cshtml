@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+</head>
+<body>
+    <h1>Name of Product: @ViewBag.selectedproduct</h1>
+    @await Html.PartialAsync("_FirstPartial")
+    <img alt="@ViewBag.selectedproduct" src="@Url.Action("GetImage",new { prodname = ViewBag.selectedproduct })" width="500" />
+</body>
+</html>

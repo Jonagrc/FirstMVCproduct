@@ -1,0 +1,47 @@
+﻿@model Week12ProductsProject.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+</head>
+<body>
+    @await Html.PartialAsync("_FirstPartial")
+    <form asp-action="Create" method="post">
+        <div>
+            @*using this to gather information then once done going toaction create() and posting*@
+            <label asp-for="ProductName"></label>
+            <input asp-for="ProductName" />
+        </div>
+        <div>
+            @*using this to gather information then once done going toaction create() and posting*@
+            <label asp-for="Description"></label>
+            <input asp-for="Description" />
+        </div>
+        <div>
+            @*using this to gather information then once done going toaction create() and posting*@
+            <label asp-for="ProductStock"></label>
+            <input asp-for="ProductStock" />
+        </div>
+        <div>
+            @*using this to gather information then once done going toaction create() and posting*@
+            <label asp-for="ProductType"></label>
+            <select asp-for="ProductType"
+                    asp-items="Html.GetEnumSelectList<Week12ProductsProject.Models.ProdType>()">
+                <option value="">Please Select</option>
+            </select>
+            @*we a mentioning that the select tag is for department(label) and its getting the values from models => dept*@
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div>
+            <button type="submit">Create Product</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for prdty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<header>
+    
+        <ul style="font-size:35px;">
+            <li>@Html.ActionLink("Top 5 Microsoft Products", "DisplayAll", "Product")</li>
+            <li>@Html.ActionLink("My Product List", "ProductList", "Product")</li>
+            <li ><a asp-action="Index" asp-controller="Home">Home page</a></li>
+            <li ><a asp-action="Create" asp-controller="Product">Add Product to List</a></li>
+        </ul>
+    
+</header>
+
+@*<nav style=" color: white;
+        width: 100%;
+        font-size: 70px;
+        height: 75px;
+        background-color: rgba(13, 0, 255, 0.1);
+        line-height: 75px;
+        padding: 0px 20px;
+        position: fixed;
+        z-index: 1;">
+    @Html.ActionLink("Microsoft Products", "DisplayAll", "Product")
+    @Html.ActionLink("Product List", "ProductList", "Product")
+    <a asp-action="Index" asp-controller="Home">Home page</a>
+    <a asp-action="Create" asp-controller="Product">Add New Product</a>
+</nav>*@

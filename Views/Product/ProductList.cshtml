@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Week12ProductsProject.Models.Product>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ProductList</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css"/>
+</head>
+<body>
+    @await Html.PartialAsync("_FirstPartial")
+    <table>
+        <thead>
+            <tr>
+                <th>product Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Stock</th>
+                <th>Product category</th>
+            </tr>
+        </thead>
+        @*points to each prd in the list*@
+        @foreach (var prod in Model)
+        {/*represent in rows <tr> = row*/
+    <tr>
+        <td>@prod.ProductId</td>
+        <td>@prod.ProductName</td>
+        <td style="padding-left:25px;">@prod.Description</td>
+        <td style="padding-left:25px;">@prod.ProductStock</td>
+        <td style="padding-left:25px;">@prod.ProductType</td>
+        <td style="padding-left:25px;"><a asp-action="Create" asp-controller="Product">Add Product to List</a></td>
+        <td style="padding-left:25px;"><a asp-action="Update" asp-controller="Product" asp-route-id="@prod.ProductId">Update Product</a></td>
+        <td style="padding-left:25px;"><a asp-action="Delete" asp-controller="Product" asp-route-id="@prod.ProductId">Delete Product</a></td>
+    </tr>
+        }
+    </table>
+</body>
+</html>
